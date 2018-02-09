@@ -20,4 +20,5 @@ window.fn = {
         }
         return isFrontStar ? (star + char) : (char + star);
     },
+
 };

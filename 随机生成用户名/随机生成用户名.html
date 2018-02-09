@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>随机生成用户名</title>
-    <script src="./userName.js"></script>
+    <script src="./js/jquery1.11.1.js"></script>
+    <script src="./js/userName.js"></script>
 </head>
 <body>
-
+<div>
+    <span>随机生成的用户名：</span>
+    <input type="text" class="userName" placeholder="随机生成的用户名">
+    <button style="margin-left: 5px" class="btn">生成</button>
+</div>
 <script>
-    console.log(fn.randomName(3, 4 + Math.floor(Math.random() * 4)));//  4 + Math.floor(Math.random() * 4)表示随机生成4~7个星号
+    /*随机生成的用户名*/
+    $(function () {
+       $(".btn").click(function () {
+           //  4 + Math.floor(Math.random() * 4)表示随机生成4~7个星号
+           $(".userName").val(fn.randomName(3,4 + Math.floor(Math.random() * 4)));
+       })
+    });
+    // console.log(fn.randomName(3, 4 + Math.floor(Math.random() * 4)));
 </script>
 </body>
 </html>
