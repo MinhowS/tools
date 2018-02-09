@@ -7,6 +7,7 @@
     <script src="./js/userName.js"></script>
 </head>
 <body>
+<p>随机生成字符+星号的用户名（或者星号+字符的用户名），字符和星号数量均可自定义</p>
 <div>
     <span>随机生成的用户名：</span>
     <input type="text" class="userName" placeholder="随机生成的用户名">
@@ -15,12 +16,11 @@
 <script>
     /*随机生成的用户名*/
     $(function () {
-       $(".btn").click(function () {
-           //  4 + Math.floor(Math.random() * 4)表示随机生成4~7个星号
-           $(".userName").val(fn.randomName(3,4 + Math.floor(Math.random() * 4)));
-       })
+        $(".btn").on('click', function () {
+            //  4 + Math.floor(Math.random() * 4)表示随机生成4~7个星号
+            $(".userName").val(fn.randomName(3, 4 + Math.floor(Math.random() * 4)));
+        })
     });
-    // console.log(fn.randomName(3, 4 + Math.floor(Math.random() * 4)));
 </script>
 </body>
 </html>
