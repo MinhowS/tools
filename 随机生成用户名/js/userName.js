@@ -20,5 +20,13 @@ window.fn = {
         }
         return isFrontStar ? (star + char) : (char + star);
     },
+    //随机生成n个用户名并存到数组里，num[数量],charBit[字母数量], isFrontStar[星号是否在前面]
+    nRandomName: function (num,charNum,isFrontStar) {
+        let arr =[];
+        for (let i = 0; i < num; i++){
+             arr[i] = fn.randomName(charNum,3 + Math.floor(Math.random() * 4),isFrontStar);//  3 + Math.floor(Math.random() * 4)表示随机生成3~6个星号
+        }
+        return arr;
+    }
 
 };
