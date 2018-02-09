@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机生成n个用户名</title>
+    <style>
+        .userName {
+            background-color: greenyellow;
+            width: 400px;
+            height: 600px;
+            border: 1px solid black;
+            margin-top: 20px;
+            overflow: auto;
+        }
+    </style>
+    <script src="./js/jquery1.11.1.js"></script>
+    <script src="./js/userName.js"></script>
+    <script>
+        $(function () {
+            $("input[type=button]").on('click',function () {
+                let ap = fn.nRandomName(20,3);
+                let unList = '';
+                for (let i of ap){
+                    unList += `<li>${i}</li>`;
+                }
+                $(".userName ol").empty().append(unList);
+            });
+        });
+    </script>
+</head>
+<body>
+<pre>随机生成n个用户名：
+    1.所有的用户名字符数和星号都一样
+    2.用户名字符数一样，星号数随机
+    3.用户名星号数一样，字符数随机
+    4.用户名的字符数和星号数均随机
+相应的实现要到方法里面去改参数的，本例是2的情况
+</pre>
+<div>
+    <input type="button" class="button" value="生成">
+</div>
+<div class="userName">
+    <ol></ol>
+</div>
+</body>
+</html>
