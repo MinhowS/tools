@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+<pre>
+    把数组当成参数传进去即可
+
+</pre>
+
+<script>
+    function uniq(arr) {
+        return Array.from(new Set(arr));
+    }
+    let a = [1,23,4,2,14,4,5,3,2,1];
+    console.log(uniq(a));
+</script>
+</body>
+</html>
