@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 40000px;
+        }
+        .xf {
+            width: 100px;
+            height: 300px;
+            border: 1px solid red;
+            background-color: aquamarine;
+            position: absolute;
+            left: 5px;
+            top: 200px;
+        }
+        .xf_1 {
+            height: 45px;
+            background-color: greenyellow;
+        }
+    </style>
+    <script src="./js/jquery1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            let xf = $(".xf");
+            let xf_left = xf.eq(0);
+            let height = xf_left.height();
+            $(window).on('scroll', function () {
+                let top = $(document).scrollTop();
+                if (xf_left.position().top + height < top - 40) {    //如果一次滚动的距离大于悬浮logo底端距离页面顶端的距离
+                    xf_left.css("top", top - 40 + "px");             //就先将其固定在可视窗口的顶部-40px的位置
+                }
+                xf_left.stop().animate({top: 200 + top + "px"}, 500, "linear");//固定在距离窗口顶端200px的位置
+            })
+        });
+    </script>
+</head>
+<body>
+<div class="xf">
+    <div class="xf_1"></div>
+</div>
+</body>
+</html>
